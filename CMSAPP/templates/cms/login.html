@@ -1,0 +1,36 @@
+{% extends 'cms/base.html'%}
+{% block body_block %}
+<br/><br/>
+<i class="fa fa-lock" style="font-size:60px;color:red"><br/><font size="+2" color="black">Login Authentication</font></i>
+
+<br/><br/>
+		<form name= "form2" method="post">
+			<center>
+					<table class="table">
+					
+					<tr>
+					<td>
+						
+						<input class="form-control" type="email" name="emailid" placeholder="Enter EmailID" autofocus="on" autocomplete="off" maxlength="100" required />
+					</td>
+					</tr>
+					<tr>
+					<td>
+						<input type="password" class="form-control" name="password" required placeholder="Enter Password" maxlength="30" />
+
+					</td></tr>
+					<tr>
+					<td colspan="2">
+						<input class="form-control btn btn-success" type="submit" name="btnsubmit"  value="Login" />
+
+					</td>
+					</tr>
+</table>
+
+					
+					
+			</center>
+					{%csrf_token%}
+
+		</form>
+{% endblock %}

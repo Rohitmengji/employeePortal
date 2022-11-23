@@ -1,0 +1,42 @@
+{% extends 'cms/userbase.html'%}
+{% block body_block %}
+<font size="+2" color="black">Chat Window</font>
+<br/><br/>
+<form name="frm" method="post" enctype="multipart/form-data">
+		<center>
+			{{msg}}
+		</center>
+	<table align="center" class="table">
+		<tr>
+			<td>
+				<select class="form-control" name="username" required>
+					<option value="">Select Friend to chat</option>
+					{%for d1 in data1 %}
+					<option value="{{d1.emailid2}}">{{d1.name2}}-{{d1.country2}}</option>
+					{%endfor%}
+					
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Type Your Message:<br/>
+				<textarea class="form-control" name="txtmessage"  required>
+				</textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input  type="file" name="upfile" class="form-control" >
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input class="form-control btn btn-success" type="submit" name="Submit">
+			</td>
+		</tr>
+	</table>
+	{% csrf_token %}
+
+</form>
+{% endblock %}

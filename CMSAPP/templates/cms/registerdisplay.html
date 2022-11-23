@@ -1,0 +1,32 @@
+{% extends 'cms/adminbase.html'%}
+{% block body_block %}
+
+		<table align="center" border="1">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Mobile no.</th>
+				<th>Email ID</th>
+				<th>Gender</th>
+				<th>Country</th>
+				<th>Profession</th>
+				<th></th>
+			</tr>
+			{%for d in data%}
+			<form name="frm" method="post">
+				<input type="hidden" name="hid" value="{{d.id}}">
+				<tr>
+					<td>{{d.id}}</td>
+					<td>{{d.name}}</td>
+					<td>{{d.mobilenumber}}</td>
+					<td>{{d.email}}</td>
+					<td>{{d.gender}}</td>
+					<td>{{d.country}}</td>
+					<td>{{d.profession}}</td>
+					<td><input type="submit" name="btnsubmit" value="Delete"></td>
+				</tr>
+				{% csrf_token %}
+			</form>	
+			{%endfor%}
+		</table>
+{% endblock %}

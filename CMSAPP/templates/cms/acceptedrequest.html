@@ -1,0 +1,31 @@
+{% extends 'cms/userbase.html'%}
+{% block body_block %}
+		{{msg}}
+		<table align="center" class="table" >
+			<tr>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>Country</th>
+				<th>Profession</th>
+				<th></th>
+				
+			</tr>
+			{%for d in data%}
+			<form name="frndreq" method="post">
+				<input type="hidden" name="txtemailid" value="{{d.emailid2}}">
+			<tr>
+				<td>{{d.name2}}</td>
+				<td>{{d.gender2}}</td>
+				<td>{{d.country2}}</td>
+				<td>{{d.profession2}}</td>
+				<td>
+					<input type="submit" name="btnviewchats" value="View Mail">
+				</td>
+			</tr>
+			{% csrf_token %}	
+		</form>
+			{%endfor%}
+		
+		</table>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'cms/base.html'%}
+{% block body_block %}
+		<form name= "form1" method="post">
+			<center>
+				<h4>
+				{{msg}}
+			</h4>
+						<table class="table">
+					<tr>
+					<td>
+						<input type="text" class="form-control" name="entername" placeholder="Enter Name" Maxlength ="50" style="width:100%" autofocus="on" autocomplete="off" required=" required" />
+					</td>
+					</tr>
+					<tr>
+					<td>
+						<input type="number" name="mobilenumber" class="form-control" placeholder="Enter Mobile Number" style="width:100%" required autocomplete="off" min="6300000000" max="9999999999" maxlength="50" title="Enter Valid Mobile Number" pattern="[0-9]{10}" />
+					</td>
+					</tr>
+					<tr>
+					<td>
+						<input type="email" name="emailid" placeholder="Enter Email ID" class="form-control" autocomplete="off" maxlength="100" required />
+					</td>
+					</tr>
+					<tr>
+					<td>
+						<input type="password" name="password" required placeholder="Enter Password" class="form-control" maxlength="30" />
+					</td>
+					</tr>
+					<tr>
+					<td>
+						Male <input type="radio" checked name="gender" value="Male"/> 
+						&nbsp; &nbsp;
+						Female <input type="radio" name="gender" value="Female" />
+					</td>
+					</tr>
+					<tr>
+					<td>
+						<select required name="Country" style="width:100%" class="form-control">
+						<option value=" "> Select Country</option>
+						<option>India</option>
+						<option>SriLanka</option>
+						<option>China</option>
+						<option>Australia</option>
+						</select>
+					</td>
+					</tr>
+					<tr>
+					<td>
+						<select class="form-control" required name="Profession" style="width:100%">
+						<option value=" "> Select Profession</option>
+						<option>Doctor</option>
+						<option>Engineer</option>
+						<option>Farmer</option>
+						<option>Student</option>
+						<option>Government Employee</option>
+						<option>Lecture</option>
+						<option>Others</option>
+						</select>
+					</td>
+					</tr>
+					<tr>
+					<td colspan="2">
+						&nbsp; &nbsp;
+						<input type="submit" class="form-control btn btn-success" name="btnsubmit"  value="Register" />
+
+					</td>
+					</tr>
+					</table>
+					{%csrf_token%}
+			</center>
+		</form>
+	{% endblock %}

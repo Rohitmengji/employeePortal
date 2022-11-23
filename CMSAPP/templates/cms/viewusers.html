@@ -1,0 +1,33 @@
+{% extends 'cms/userbase.html'%}
+{% block body_block %}
+		{{msg}}
+		<table align="center" class="table" >
+			<tr>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>Country</th>
+				<th>Profession</th>
+				<th></th>
+			</tr>
+			{%for d in data%}
+			<form name="frndreq" method="post">
+			<input type="hidden" name="txtemailid" value="{{d.email}}" />
+			<input type="hidden" name="txtname" value="{{d.name}}" />
+			<input type="hidden" name="txtgender" value="{{d.gender}}" />
+			<input type="hidden" name="txtcountry" value="{{d.country}}" />
+			<input type="hidden" name="txtprofession" value="{{d.profession}}" />
+			<input type="hidden" name="txtmobilenumber" value="{{d.mobilenumber}}" />
+	
+			<tr>
+				<td>{{d.name}}</td>
+				<td>{{d.gender}}</td>
+				<td>{{d.country}}</td>
+				<td>{{d.profession}}</td>
+				<td><input type="submit" name="btnsubmit" value="Send Request"></td>
+			</tr>
+			{% csrf_token %}	
+		</form>
+			{%endfor%}
+		</table>
+
+{% endblock %}

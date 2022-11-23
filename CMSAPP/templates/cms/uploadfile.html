@@ -1,0 +1,55 @@
+{% extends 'cms/userbase.html'%}
+{% block body_block %}
+
+		<form name= "form2" methods="post">
+			<center>
+					{{msg}}
+					<tr>
+					<td>
+						UPLOAD FILE
+						<br/>
+						<br/>
+					</td>
+					</tr>
+					<table >
+					<tr>
+					<td>
+						<select required name="Filetype" style="width:100%">
+						<option value=" "> Select File</option>
+						<option>Pdf</option>
+						<option>Docs</option>
+						<option>Image</option>
+						</select>
+
+					</td>
+					</tr>
+					<tr>
+					<td>
+						<hr/>
+						<input type="text" name="entername" placeholder="Search Text" Maxlength ="50" style="width:100%" autofocus="on" autocomplete="off" required=" required" />
+
+					</td>
+					</tr>
+
+					<tr>
+					<td>
+						<hr/>
+						<input type="file" name="photo" />
+					</td>
+					</tr>
+					<tr>
+					<td colspan="2">
+						<hr/>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+						<input type="submit" name="btnsubmit"  value="Submit" />
+						&nbsp; 
+						<input type="submit" name="btnsubmit"  value="Cancel" />
+
+					</td>
+					</tr>
+
+					{%csrf_token}
+					</table>	
+			</center>
+		</form>
+	{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'cms/adminbase.html'%}
+{% block body_block %}
+
+		<table align="center" border="1">
+			<tr>
+				<th>File ID</th>
+				<th>File Type</th>
+				<th>File Name</th>
+				<th>File ID</th>
+				
+			</tr>
+			{%for d in data%}
+			<tr>
+				<td>{{d.id}}</td>
+				<td>{{d.filetype}}</td>
+				<td>{{d.name}}</td>
+				<td>{{d.file}}</td>
+			</tr>
+			{%endfor%}
+		</table>
+	{% endblock %}

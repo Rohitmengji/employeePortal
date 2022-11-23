@@ -1,0 +1,24 @@
+
+{% extends 'cms/userbase.html'%}
+{% block body_block %}
+	<form name="frm" method="post" enctype="multipart/form-data">
+		<center>
+			{{msg}}
+		</center>
+		<table class="table">
+		{%for d in data %}
+			<tr>
+				<td>
+					{{d.message}}
+					<font size="-6">({{d.currentdate}})</font>
+					<br/>
+					{% if d.filename != "NOFILE" %}
+					<a static  href="{{d.filename}}" >Download File</a>						
+					{% endif %}
+				</td>
+			</tr>
+		{%endfor%}
+		</table>
+			{% csrf_token %}
+	</form>
+{% endblock %}
